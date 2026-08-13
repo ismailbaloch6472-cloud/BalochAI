@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "balochai",
+  "main": "_worker.js",
+  "compatibility_date": "2026-08-13",
+
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+
+  "ai": {
+    "binding": "AI"
+  },
+
+  "observability": {
+    "enabled": true
+  }
+}
