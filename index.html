@@ -17,7 +17,6 @@
   --input:#fff;
   --button:#202123;
   --buttonText:#fff;
-  --danger:#c62828;
   --shadow:rgba(0,0,0,.08);
   --chatWidth:820px;
   --fontSize:15px;
@@ -50,10 +49,7 @@ body{
   font-family:Arial,Helvetica,sans-serif;
   background:var(--bg);
   color:var(--text);
-  transition:.2s;
 }
-
-/* SIDEBAR */
 
 .sidebar{
   width:270px;
@@ -127,8 +123,6 @@ body{
   padding:10px 12px;
 }
 
-/* MAIN */
-
 .main{
   flex:1;
   min-width:0;
@@ -136,8 +130,6 @@ body{
   flex-direction:column;
   background:var(--bg);
 }
-
-/* HEADER */
 
 .header{
   height:58px;
@@ -159,8 +151,6 @@ body{
 .headerName{
   font-weight:600;
 }
-
-/* CHAT */
 
 #chat{
   flex:1;
@@ -195,8 +185,6 @@ body{
   color:var(--muted);
   margin:0;
 }
-
-/* MESSAGE */
 
 .messageRow{
   display:flex;
@@ -236,14 +224,11 @@ body{
   font-size:var(--fontSize);
 }
 
-/* ACTIONS */
-
 .actions{
   display:flex;
   gap:3px;
   margin-top:4px;
   opacity:0;
-  transition:.15s;
 }
 
 .messageWrap:hover .actions{
@@ -259,13 +244,6 @@ body{
   padding:5px 7px;
   font-size:13px;
 }
-
-.actions button:hover{
-  background:var(--hover);
-  color:var(--text);
-}
-
-/* THINKING */
 
 .thinking{
   display:flex;
@@ -300,8 +278,6 @@ body{
     opacity:1;
   }
 }
-
-/* INPUT */
 
 .inputArea{
   position:fixed;
@@ -360,12 +336,6 @@ body{
   font-size:18px!important;
 }
 
-.send:hover{
-  opacity:.75;
-}
-
-/* PLUS MENU */
-
 .fileMenu{
   position:fixed;
   left:290px;
@@ -394,12 +364,6 @@ body{
   border-radius:8px;
   cursor:pointer;
 }
-
-.fileMenu button:hover{
-  background:var(--hover);
-}
-
-/* SEARCH */
 
 .searchBox{
   position:fixed;
@@ -430,8 +394,6 @@ body{
   padding:8px;
 }
 
-/* SETTINGS */
-
 .overlay{
   position:fixed;
   inset:0;
@@ -455,11 +417,6 @@ body{
   color:var(--text);
   border-radius:18px;
   padding:22px;
-  box-shadow:0 15px 50px rgba(0,0,0,.25);
-}
-
-.settings h2{
-  margin-top:0;
 }
 
 .setting{
@@ -487,8 +444,6 @@ body{
   font-size:20px;
 }
 
-/* MOBILE */
-
 @media(max-width:700px){
 
   .sidebar{
@@ -505,10 +460,6 @@ body{
     max-width:88%;
   }
 
-  .welcome{
-    padding-top:35px;
-  }
-
   .fileMenu{
     left:15px;
   }
@@ -517,8 +468,6 @@ body{
 </head>
 
 <body>
-
-<!-- SIDEBAR -->
 
 <aside class="sidebar">
 
@@ -574,28 +523,19 @@ body{
 
     <div class="version">
       Baloch AI<br>
-      <small>Powered by Ollama</small>
+      <small>Powered by Cloudflare AI</small>
     </div>
 
   </div>
 
 </aside>
 
-
-<!-- MAIN -->
-
 <main class="main">
 
   <header class="header">
-
     <img src="./logo.png" alt="Baloch AI">
-
-    <span class="headerName">
-      Baloch AI
-    </span>
-
+    <span class="headerName">Baloch AI</span>
   </header>
-
 
   <div id="chat">
 
@@ -605,7 +545,7 @@ body{
 
         <img src="./logo.png" alt="Baloch AI">
 
-        <h1>How can I help you?</h1>
+        <h1>Hello 👋</h1>
 
         <p>Ask anything to Baloch AI</p>
 
@@ -614,9 +554,6 @@ body{
     </div>
 
   </div>
-
-
-  <!-- SEARCH -->
 
   <div class="searchBox" id="searchBox">
 
@@ -627,9 +564,6 @@ body{
     >
 
   </div>
-
-
-  <!-- FILE MENU -->
 
   <div class="fileMenu" id="fileMenu">
 
@@ -642,7 +576,6 @@ body{
     </button>
 
   </div>
-
 
   <input
     type="file"
@@ -657,17 +590,11 @@ body{
     hidden
   >
 
-
-  <!-- INPUT -->
-
   <div class="inputArea">
 
     <div class="inputBox">
 
-      <button
-        onclick="toggleFileMenu()"
-        title="Add"
-      >
+      <button onclick="toggleFileMenu()" title="Add">
         +
       </button>
 
@@ -677,10 +604,7 @@ body{
         autocomplete="off"
       >
 
-      <button
-        onclick="startVoice()"
-        title="Voice"
-      >
+      <button onclick="startVoice()" title="Voice">
         🎙
       </button>
 
@@ -697,9 +621,6 @@ body{
   </div>
 
 </main>
-
-
-<!-- SETTINGS -->
 
 <div class="overlay" id="settingsOverlay">
 
@@ -725,7 +646,6 @@ body{
 
     </div>
 
-
     <div class="setting">
 
       <label>Font size</label>
@@ -743,7 +663,6 @@ body{
 
     </div>
 
-
     <div class="setting">
 
       <label>Chat spacing</label>
@@ -758,19 +677,6 @@ body{
       </select>
 
     </div>
-
-
-    <div class="setting">
-
-      <label>Enter key</label>
-
-      <select id="enterMode">
-        <option value="send">Enter sends message</option>
-        <option value="newline">Enter creates new line</option>
-      </select>
-
-    </div>
-
 
     <div class="setting">
 
@@ -792,12 +698,7 @@ body{
 
 </div>
 
-
 <script>
-
-/* =========================
-   ELEMENTS
-========================= */
 
 const input =
   document.getElementById("message");
@@ -820,32 +721,19 @@ const searchBox =
 const searchInput =
   document.getElementById("searchInput");
 
-
-/* =========================
-   CHAT MEMORY
-========================= */
-
 let conversation = [];
-
 let currentAIMessage = null;
 
 
-/* =========================
-   ENTER KEY
-========================= */
+/* ENTER */
 
 input.addEventListener(
   "keydown",
   function(event){
 
-    const mode =
-      document.getElementById("enterMode")
-      ?.value || "send";
-
     if(
       event.key === "Enter" &&
-      !event.shiftKey &&
-      mode === "send"
+      !event.shiftKey
     ){
 
       event.preventDefault();
@@ -858,15 +746,9 @@ input.addEventListener(
 );
 
 
-/* =========================
-   ADD MESSAGE
-========================= */
+/* ADD MESSAGE */
 
-function addMessage(
-  text,
-  type,
-  save = true
-){
+function addMessage(text,type,save=true){
 
   const welcome =
     document.getElementById("welcome");
@@ -884,13 +766,10 @@ function addMessage(
       ? "userRow"
       : "aiRow");
 
-
   const wrap =
     document.createElement("div");
 
-  wrap.className =
-    "messageWrap";
-
+  wrap.className="messageWrap";
 
   const bubble =
     document.createElement("div");
@@ -900,83 +779,24 @@ function addMessage(
       ? "userBubble"
       : "aiBubble";
 
-  bubble.textContent =
-    text;
-
+  bubble.textContent=text;
 
   wrap.appendChild(bubble);
-
-
-  /* ACTIONS */
 
   const actions =
     document.createElement("div");
 
   actions.className="actions";
 
+  const copy =
+    document.createElement("button");
 
-  if(type === "user"){
+  copy.textContent="📋 Copy";
 
-    const edit =
-      document.createElement("button");
+  copy.onclick =
+    () => copyText(bubble.textContent);
 
-    edit.textContent="✏ Edit";
-
-    edit.onclick =
-      () => editMessage(
-        bubble,
-        text
-      );
-
-    actions.appendChild(edit);
-
-  }else{
-
-    const copy =
-      document.createElement("button");
-
-    copy.textContent="📋 Copy";
-
-    copy.onclick =
-      () => copyText(
-        bubble.textContent
-      );
-
-
-    const regenerate =
-      document.createElement("button");
-
-    regenerate.textContent="↻ Regenerate";
-
-    regenerate.onclick =
-      () => regenerateMessage();
-
-
-    const like =
-      document.createElement("button");
-
-    like.textContent="👍";
-
-    like.onclick =
-      () => like.style.opacity=".5";
-
-
-    const dislike =
-      document.createElement("button");
-
-    dislike.textContent="👎";
-
-    dislike.onclick =
-      () => dislike.style.opacity=".5";
-
-
-    actions.appendChild(copy);
-    actions.appendChild(regenerate);
-    actions.appendChild(like);
-    actions.appendChild(dislike);
-
-  }
-
+  actions.appendChild(copy);
 
   const deleteButton =
     document.createElement("button");
@@ -986,11 +806,7 @@ function addMessage(
   deleteButton.onclick =
     () => row.remove();
 
-
-  actions.appendChild(
-    deleteButton
-  );
-
+  actions.appendChild(deleteButton);
 
   wrap.appendChild(actions);
 
@@ -1001,13 +817,13 @@ function addMessage(
   document.getElementById("chat").scrollTop =
     document.getElementById("chat").scrollHeight;
 
-
   if(save){
 
     conversation.push({
-      role:type === "user"
-        ? "user"
-        : "assistant",
+      role:
+        type === "user"
+          ? "user"
+          : "assistant",
       content:text
     });
 
@@ -1015,34 +831,28 @@ function addMessage(
 
   }
 
-
   return bubble;
 }
 
 
-/* =========================
-   THINKING
-========================= */
+/* THINKING */
 
 function showThinking(){
 
   const row =
     document.createElement("div");
 
-  row.className=
-    "messageRow aiRow";
+  row.className="messageRow aiRow";
 
   const wrap =
     document.createElement("div");
 
-  wrap.className=
-    "messageWrap";
+  wrap.className="messageWrap";
 
   const bubble =
     document.createElement("div");
 
-  bubble.className=
-    "aiBubble";
+  bubble.className="aiBubble";
 
   bubble.innerHTML=`
     <div class="thinking">
@@ -1065,9 +875,7 @@ function showThinking(){
 }
 
 
-/* =========================
-   SEND
-========================= */
+/* SEND MESSAGE */
 
 async function sendMessage(){
 
@@ -1078,7 +886,6 @@ async function sendMessage(){
     return;
   }
 
-
   addMessage(
     text,
     "user"
@@ -1086,14 +893,11 @@ async function sendMessage(){
 
   input.value="";
 
-
   const aiBubble =
     showThinking();
 
-
   currentAIMessage =
     aiBubble;
-
 
   try{
 
@@ -1109,135 +913,44 @@ async function sendMessage(){
           },
 
           body:JSON.stringify({
-
-            messages:
-
-              conversation
-              .filter(
-                x =>
-                x.role === "user" ||
-                x.role === "assistant"
-              )
-              .map(x => ({
-                role:x.role,
-                content:x.content
-              })),
-
-            stream:true
-
+            message:text
           })
-
         }
       );
 
+    const data =
+      await response.json();
 
-    if(!response.ok){
+    if(
+      !response.ok ||
+      !data.success
+    ){
 
       throw new Error(
-        "Server returned an error"
+        data.error ||
+        "AI request failed"
       );
 
     }
 
-
-    const reader =
-      response.body.getReader();
-
-    const decoder =
-      new TextDecoder();
-
-    let buffer="";
-
-    let answer="";
-
-    aiBubble.innerHTML="";
-
-
-    while(true){
-
-      const result =
-        await reader.read();
-
-      if(result.done){
-        break;
-      }
-
-
-      buffer +=
-        decoder.decode(
-          result.value,
-          {stream:true}
-        );
-
-
-      const lines =
-        buffer.split("\n");
-
-      buffer =
-        lines.pop() || "";
-
-
-      for(
-        const line of lines
-      ){
-
-        if(!line.trim()){
-          continue;
-        }
-
-
-        try{
-
-          const data =
-            JSON.parse(line);
-
-
-          if(
-            data.message &&
-            data.message.content
-          ){
-
-            answer +=
-              data.message.content;
-
-            aiBubble.textContent =
-              answer;
-
-            document.getElementById("chat").scrollTop =
-              document.getElementById("chat").scrollHeight;
-
-          }
-
-        }catch(e){
-
-          /* ignore incomplete data */
-
-        }
-
-      }
-
-    }
-
-
-    if(!answer){
-
-      aiBubble.textContent =
-        "AI ne jawab nahi diya.";
-
-    }
-
+    aiBubble.textContent =
+      data.response ||
+      "AI ne jawab nahi diya.";
 
     conversation.push({
       role:"assistant",
-      content:answer
+      content:
+        data.response || ""
     });
 
     saveHistory();
 
-
   }catch(error){
 
-    console.error(error);
+    console.error(
+      "BalochAI Error:",
+      error
+    );
 
     aiBubble.textContent =
       "❌ AI se connection nahi ho raha.";
@@ -1247,94 +960,7 @@ async function sendMessage(){
 }
 
 
-/* =========================
-   EDIT
-========================= */
-
-function editMessage(
-  bubble,
-  oldText
-){
-
-  const newText =
-    prompt(
-      "Edit your message:",
-      oldText
-    );
-
-  if(
-    newText === null ||
-    !newText.trim()
-  ){
-    return;
-  }
-
-  bubble.textContent =
-    newText.trim();
-
-  input.value =
-    newText.trim();
-
-  input.focus();
-
-}
-
-
-/* =========================
-   COPY
-========================= */
-
-async function copyText(text){
-
-  try{
-
-    await navigator.clipboard.writeText(
-      text
-    );
-
-  }catch{
-
-    alert("Copy failed.");
-
-  }
-
-}
-
-
-/* =========================
-   REGENERATE
-========================= */
-
-function regenerateMessage(){
-
-  if(
-    conversation.length === 0
-  ){
-    return;
-  }
-
-  const lastUser =
-    [...conversation]
-    .reverse()
-    .find(
-      x => x.role === "user"
-    );
-
-  if(!lastUser){
-    return;
-  }
-
-  input.value =
-    lastUser.content;
-
-  sendMessage();
-
-}
-
-
-/* =========================
-   NEW CHAT
-========================= */
+/* NEW CHAT */
 
 function newChat(){
 
@@ -1350,13 +976,9 @@ function newChat(){
 
       <img src="./logo.png">
 
-      <h1>
-        How can I help you?
-      </h1>
+      <h1>Hello 👋</h1>
 
-      <p>
-        Ask anything to Baloch AI
-      </p>
+      <p>Ask anything to Baloch AI</p>
 
     </div>
 
@@ -1367,9 +989,7 @@ function newChat(){
 }
 
 
-/* =========================
-   CLEAR CHAT
-========================= */
+/* CLEAR */
 
 function clearChat(){
 
@@ -1386,9 +1006,7 @@ function clearChat(){
 }
 
 
-/* =========================
-   SAVE HISTORY
-========================= */
+/* SAVE */
 
 function saveHistory(){
 
@@ -1402,9 +1020,7 @@ function saveHistory(){
 }
 
 
-/* =========================
-   LOAD HISTORY
-========================= */
+/* LOAD */
 
 function loadHistory(){
 
@@ -1439,18 +1055,35 @@ function loadHistory(){
       }
     );
 
-  }catch(e){
+  }catch(error){
 
-    console.error(e);
+    console.error(error);
 
   }
 
 }
 
 
-/* =========================
-   PLUS
-========================= */
+/* COPY */
+
+async function copyText(text){
+
+  try{
+
+    await navigator.clipboard.writeText(
+      text
+    );
+
+  }catch{
+
+    alert("Copy failed.");
+
+  }
+
+}
+
+
+/* PLUS MENU */
 
 function toggleFileMenu(){
 
@@ -1493,9 +1126,7 @@ function openFiles(){
 }
 
 
-/* =========================
-   FILE SELECTED
-========================= */
+/* FILES */
 
 imageInput.addEventListener(
   "change",
@@ -1515,7 +1146,6 @@ imageInput.addEventListener(
 
   }
 );
-
 
 fileInput.addEventListener(
   "change",
@@ -1537,16 +1167,13 @@ fileInput.addEventListener(
 );
 
 
-/* =========================
-   VOICE
-========================= */
+/* VOICE */
 
 function startVoice(){
 
   const SpeechRecognition =
     window.SpeechRecognition ||
     window.webkitSpeechRecognition;
-
 
   if(!SpeechRecognition){
 
@@ -1558,16 +1185,12 @@ function startVoice(){
 
   }
 
-
   const recognition =
     new SpeechRecognition();
 
-  recognition.lang =
-    "en-US";
+  recognition.lang="en-US";
 
-  recognition.interimResults =
-    false;
-
+  recognition.interimResults=false;
 
   recognition.onstart =
     () => {
@@ -1576,7 +1199,6 @@ function startVoice(){
         "Listening...";
 
     };
-
 
   recognition.onresult =
     event => {
@@ -1590,7 +1212,6 @@ function startVoice(){
 
     };
 
-
   recognition.onend =
     () => {
 
@@ -1599,15 +1220,12 @@ function startVoice(){
 
     };
 
-
   recognition.start();
 
 }
 
 
-/* =========================
-   THEME
-========================= */
+/* THEME */
 
 function toggleTheme(){
 
@@ -1618,7 +1236,9 @@ function toggleTheme(){
 
   localStorage.setItem(
     "theme",
-    dark ? "dark" : "light"
+    dark
+      ? "dark"
+      : "light"
   );
 
   updateThemeUI();
@@ -1653,24 +1273,28 @@ function updateThemeUI(){
   document.getElementById(
     "themeIcon"
   ).textContent =
-    dark ? "☀" : "☾";
+    dark
+      ? "☀"
+      : "☾";
 
   document.getElementById(
     "themeText"
   ).textContent =
-    dark ? "Light mode" : "Dark mode";
+    dark
+      ? "Light mode"
+      : "Dark mode";
 
   document.getElementById(
     "themeSelect"
   ).value =
-    dark ? "dark" : "light";
+    dark
+      ? "dark"
+      : "light";
 
 }
 
 
-/* =========================
-   FONT SIZE
-========================= */
+/* FONT */
 
 function changeFontSize(value){
 
@@ -1694,9 +1318,7 @@ function changeFontSize(value){
 }
 
 
-/* =========================
-   SPACING
-========================= */
+/* SPACING */
 
 function changeSpacing(value){
 
@@ -1715,9 +1337,7 @@ function changeSpacing(value){
 }
 
 
-/* =========================
-   SETTINGS
-========================= */
+/* SETTINGS */
 
 function openSettings(){
 
@@ -1740,9 +1360,7 @@ function closeSettings(){
 }
 
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 function focusSearch(){
 
@@ -1759,8 +1377,8 @@ function searchChat(){
 
   const query =
     searchInput.value
-    .trim()
-    .toLowerCase();
+      .trim()
+      .toLowerCase();
 
   const rows =
     document.querySelectorAll(
@@ -1772,7 +1390,7 @@ function searchChat(){
 
       const text =
         row.textContent
-        .toLowerCase();
+          .toLowerCase();
 
       row.style.display =
         !query ||
@@ -1786,9 +1404,7 @@ function searchChat(){
 }
 
 
-/* =========================
-   CLOSE MENUS
-========================= */
+/* CLOSE MENUS */
 
 document.addEventListener(
   "click",
@@ -1831,16 +1447,16 @@ document.addEventListener(
 );
 
 
-/* =========================
-   LOAD SETTINGS
-========================= */
+/* LOAD SETTINGS */
 
 const savedTheme =
   localStorage.getItem(
     "theme"
   ) || "light";
 
-changeTheme(savedTheme);
+changeTheme(
+  savedTheme
+);
 
 
 const savedFont =
